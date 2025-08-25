@@ -1,7 +1,9 @@
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 from datetime import datetime
 
-# --- Demo dataset: 10 Indian meals ---
+# --- Demo dataset: Meals ---
 meals = [
     {"meal_type": "Breakfast", "name": "Poha with Peanuts", "calories": 350, "protein": 10, "carbs": 60, "fat": 8},
     {"meal_type": "Breakfast", "name": "Upma with Vegetables", "calories": 320, "protein": 9, "carbs": 55, "fat": 7},
@@ -24,39 +26,33 @@ exercises = [
     {"type": "HIIT", "name": "Burpees 3x10"},
 ]
 
-# --- Streamlit page config ---
-st.set_page_config(page_title="💪 FitBharat Planner", layout="wide")
+# --- Sidebar: User Info ---
+st.sidebar.header("👤 Profile")
+name = st.sidebar.text_input("Name", "Fitness Enthusiast")
+age = st.sidebar.number_input("Age", 10, 80, 25)
+gender = st.sidebar.selectbox("Gender", ["Male", "Female", "Other"])
+weight = st.sidebar.number_input("Weight (kg)", 40, 150, 70)
+height = st.sidebar.number_input("Height (cm)", 140, 220, 170)
+daily_calories = st.sidebar.number_input("Calories Consumed Today", min_value=0, value=0)
 
-# --- Sidebar: user info ---
-with st.sidebar:
-    st.header("👤 Profile")
-    name = st.text_input("Name", "Fitness Enthusiast")
-    age = st.number_input("Age", 10, 80, 25)
-    gender = st.selectbox("Gender", ["Male", "Female", "Other"])
-    weight = st.number_input("Weight (kg)", 40, 150, 70)
-    height = st.number_input("Height (cm)", 140, 220, 170)
-
-    st.header("📊 Daily Calories")
-    daily_calories = st.number_input("Calories Consumed", min_value=0, value=0)
-    
 # --- Health calculations ---
 bmi = weight / ((height/100)**2)
 bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age) if gender=="Male" else 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age)
 tdee = bmr * 1.55  # moderate activity
 
-# --- Main UI ---
+# --- Main Header ---
 st.markdown("<h1 style='text-align:center; color:#2E86AB;'>💪 FitBharat Planner</h1>", unsafe_allow_html=True)
 st.markdown(f"<h3 style='text-align:center; color:#555;'>Welcome, {name}!</h3>", unsafe_allow_html=True)
 
-# --- Metrics cards ---
+# --- Metrics Cards ---
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("BMI", f"{bmi:.1f}")
 col2.metric("BMR", f"{bmr:.0f} kcal")
 col3.metric("TDEE", f"{tdee:.0f} kcal")
-col4.metric("Daily Calories", f"{daily_calories} / {int(tdee)} kcal")
+col4.metric("Calories Today", f"{daily_calories}/{int(tdee)} kcal")
 
-# --- Tabs for meals & workouts ---
-tab1, tab2 = st.tabs(["🍽️ Meals", "💪 Workouts"])
+# --- Tabs: Meals & Workouts ---
+tab1, tab2, tab3 = st.tabs(["🍽️ Meals", "💪 Workouts", "📈 Progress"])
 
 with tab1:
     st.header("Today's Meal Plan")
@@ -77,6 +73,32 @@ with tab2:
         </div>
         """, unsafe_allow_html=True)
 
-# --- Footer tips ---
+with tab3:
+    st.header("Progress & Suggestions")
+
+    # --- BMI Graph ---
+    df_bmi = pd.DataFrame({
+        "Metric": ["BMI", "Weight (kg)"],
+        "Value": [bmi, weight]
+    })
+    fig, ax = plt.subplots()
+    ax.bar(df_bmi["Metric"], df_bmi["Value"], color=["#4ECDC4","#FF6B6B"])
+    ax.set_ylim(0, max(df_bmi["Value"])*1.2)
+    st.pyplot(fig)
+
+    # --- Suggested Actions ---
+    st.subheader("💡 Suggested Actions")
+    if bmi > 25:
+        st.success("✅ Try 30 min walking today")
+    else:
+        st.info("✅ Maintain balanced diet")
+    if daily_calories < tdee:
+        st.info("✅ Add a healthy snack to reach TDEE")
+    else:
+        st.warning("⚠️ Calories exceeded today!")
+    st.info("💧 Drink 8 glasses of water daily")
+    st.info("📝 Log your meals consistently for best results")
+
+# --- Footer ---
 st.markdown("---")
-st.info("💡 Tip: Track your weight and calories daily for better progress. Combine balanced meals with consistent workouts!")
+st.markdown("<h5 style='text-align:center; color:#888;'>FitBharat Planner Demo</h5>", unsafe_allow_html=True)
