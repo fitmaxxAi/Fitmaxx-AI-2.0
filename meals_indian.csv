@@ -1,0 +1,53 @@
+meal_id,meal_name,meal_type,cuisine_region,calories,protein_g,carbs_g,fat_g,fiber_g,tags
+1,Poha with Peanuts,Breakfast,West,320,8,50,9,4,veg|mild|quick
+2,Masala Oats,Breakfast,Pan-India,300,10,45,7,8,veg|high-fiber|quick
+3,Upma (Rava),Breakfast,South,340,7,55,9,3,veg|semolina
+4,Idli with Sambar,Breakfast,South,360,13,60,5,6,veg|fermented
+5,Dosa (Plain) + Coconut Chutney,Breakfast,South,420,9,60,14,5,veg
+6,Moong Chilla + Curd,Breakfast,North,350,18,38,10,7,veg|high-protein
+7,Aloo Paratha + Curd,Breakfast,North,520,12,70,20,6,veg|hearty
+8,Besin Cheela (Veg),Breakfast,North,330,14,38,10,7,veg|gluten-free
+9,Vegetable Sandwich (Whole Wheat),Breakfast,Pan-India,360,11,52,10,7,veg
+10,Sprouts Salad (Kala chana+moong),Breakfast,Pan-India,280,16,36,6,9,veg|high-protein
+11,Pesarattu + Upma,Breakfast,South,430,17,58,10,7,veg
+12,Masala Scrambled Eggs + Toast,Breakfast,Pan-India,380,20,35,16,3,eggs
+13,Paneer Bhurji + Toast,Breakfast,North,420,23,30,20,3,veg|paneer
+14,Sattu Drink + Banana,Breakfast,East,360,16,60,4,8,veg
+15,Dahi Poha,Breakfast,West,300,9,48,7,3,veg|cooling
+16,Rajma Chawal,Lunch,North,640,22,105,10,16,veg|comfort
+17,Chole (Chana Masala) + Rice,Lunch,North,620,20,100,12,14,veg
+18,Palak Paneer + Roti,Lunch,North,560,26,55,22,9,veg|paneer
+19,Roti + Dal Tadka + Salad,Lunch,North,520,18,80,10,12,veg
+20,Vegetable Khichdi + Ghee,Lunch,Pan-India,500,16,90,10,10,veg|comfort
+21,Lemon Rice + Peanut Curd,Lunch,South,560,14,88,16,6,veg
+22,Bisibelebath + Raita,Lunch,South,620,18,100,12,10,veg
+23,Curd Rice + Fryums,Lunch,South,540,12,85,14,2,veg|cooling
+24,Veg Pulao + Raita,Lunch,North,600,12,95,16,6,veg
+25,Chicken Curry + Rice,Lunch,Pan-India,650,35,85,16,3,nonveg|chicken
+26,Grilled Chicken + Roti + Salad,Lunch,Pan-India,580,38,55,14,6,nonveg|lean
+27,Fish Curry (Rohu) + Rice,Lunch,East,620,32,88,14,2,nonveg|fish
+28,Egg Curry + Jeera Rice,Lunch,North,610,24,90,16,2,eggs
+29,Methi Thepla + Curd,Lunch,West,520,12,75,16,8,veg
+30,Baingan Bharta + Roti,Lunch,North,520,10,70,18,10,veg
+31,Paneer Tikka Wrap,Lunch,North,560,28,60,18,6,veg|wrap
+32,Masoor Dal + Rice + Salad,Dinner,North,560,24,95,6,15,veg
+33,Vegetable Sambar + Brown Rice,Dinner,South,580,16,98,7,12,veg
+34,Chicken Tikka + Roti,Dinner,North,590,40,50,16,4,nonveg|grilled
+35,Fish Fry (Air-fried) + Salad,Dinner,Coastal,520,34,30,22,4,nonveg
+36,Paneer Curry (Kadhai) + Roti,Dinner,North,600,28,55,20,6,veg
+37,Ragi Roti + Mixed Veg Curry,Dinner,South,540,12,82,12,10,veg|millet
+38,Toor Dal Rasam + Rice,Dinner,South,520,16,96,5,6,veg|light
+39,Vegetable Handi + Jeera Rice,Dinner,North,620,10,100,14,8,veg
+40,Stuffed Capsicum + Raita,Dinner,North,500,14,60,16,10,veg
+41,Moong Dal Khichdi (Low-oil),Dinner,Pan-India,480,18,82,6,10,veg|light
+42,Bhel Puri (Homemade),Snack,West,260,7,45,5,5,veg|street
+43,Roasted Chana + Jaggery,Snack,Pan-India,220,12,30,6,8,veg
+44,Peanut Chaat,Snack,Pan-India,280,11,18,16,5,veg
+45,Fruit Bowl + Nuts,Snack,Pan-India,300,6,36,12,6,veg
+46,Dahi Papdi Chaat (Light),Snack,North,300,8,40,10,3,veg
+47,Idli Podi Bites,Snack,South,280,10,44,6,4,veg
+48,Egg Bhurji Bowl,Snack,Pan-India,320,18,12,20,2,eggs
+49,Paneer Cubes (Air-fried) + Chutney,Snack,North,340,24,10,20,1,veg|paneer
+50,Thalipeeth + Curd,Snack,West,360,12,50,12,8,veg|multigrain
+51,Chana Sundal,Snack,South,260,10,32,8,7,veg|festival
+52,Soya Chaap Tikka,Snack,North,360,28,20,16,7,veg|high-protein
